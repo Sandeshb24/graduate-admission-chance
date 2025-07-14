@@ -226,7 +226,7 @@ def load_and_train_model():
 model, scaler, X_test, y_test, y_preds, mse, mae, rmse, r2, residuals, df_full = load_and_train_model()
 
 # --- App Title and Description ---
-st.title("🎓 Graduate Admission Chance Predictor")
+st.title(" Graduate Admission Chance Predictor")
 st.markdown("""
 This interactive application predicts your chances of admission to a graduate program
 based on various academic and personal factors.
@@ -276,7 +276,7 @@ st.markdown(f"*(This means a {predicted_chance*100:.0f}% probability of admissio
 st.markdown("---")
 
 # --- Model Performance Metrics ---
-st.header("📊 Model Performance Metrics")
+st.header(" Model Performance Metrics:")
 st.markdown("These metrics evaluate how well the trained model performs on unseen data.")
 
 col1, col2, col3, col4 = st.columns(4)
@@ -297,7 +297,7 @@ with col4:
 st.markdown("---")
 
 # --- Visualizations ---
-st.header("📈 Visualizations for Model Insights")
+st.header(" Visualizations for Model Insights")
 
 # 1. Actual vs Predicted Values
 st.subheader("Actual vs. Predicted Admission Chances")
@@ -395,7 +395,7 @@ except Exception as e:
 
 st.markdown("---")
 
-st.header("🚀 How to Use This App")
+st.header(" How to Use This App?")
 st.markdown("""
 1.  **Adjust Inputs:** Use the sliders and radio button in the left sidebar to input your academic details.
 2.  **View Prediction:** Your predicted chance of admission will update automatically.
