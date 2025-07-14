@@ -228,7 +228,7 @@ model, scaler, X_test, y_test, y_preds, mse, mae, rmse, r2, residuals, df_full =
 # --- App Title and Description ---
 st.title("🎓 Graduate Admission Chance Predictor")
 st.markdown("""
-This interactive Streamlit application predicts your chances of admission to a graduate program
+This interactive application predicts your chances of admission to a graduate program
 based on various academic and personal factors.
 Enter your details in the sidebar to get a personalized prediction.
 """)
@@ -259,7 +259,7 @@ user_input_df = pd.DataFrame({
 })
 
 # --- Prediction Section ---
-st.header("🎯 Your Predicted Admission Chance")
+st.header(" Your Predicted Admission Chance:")
 
 # Scale user input
 user_input_scaled = scaler.transform(user_input_df)
@@ -403,4 +403,4 @@ st.markdown("""
 """)
 
 st.markdown("---")
-st.markdown("Developed for your resume by Gemini. Data from 'Graduate Admission' dataset.")
+st.markdown("Developed by Sandesh using Data from 'Graduate Admission' dataset refered from UCLA Admissions datasets." )
