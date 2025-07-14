@@ -32,7 +32,7 @@ st.markdown("""
 
     /* Header styling */
     .st-emotion-cache-10qj07f { /* This targets the main title */
-        color: #2c3e50;
+        color: #333;
         text-align: center;
         font-size: 2.5em;
         font-weight: bold;
