@@ -155,7 +155,7 @@ st.markdown("""
 def load_and_train_model():
     """Loads data, preprocesses it, and trains the Linear Regression model."""
     try:
-        df = pd.read_csv("Admission_Predict_Ver1.1.csv")
+        df = pd.read_csv("https://raw.githubusercontent.com/Sandeshb24/graduate-admission-chance/refs/heads/main/Admission_Predict_Ver1.1.csv")
     except FileNotFoundError:
         st.error("Dataset 'Admission_Predict_Ver1.1.csv' not found. Please ensure it's in the same directory.")
         st.stop()
