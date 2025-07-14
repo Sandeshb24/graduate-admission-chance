@@ -271,7 +271,7 @@ predicted_chance = model.predict(user_input_scaled)[0]
 predicted_chance = np.clip(predicted_chance, 0, 1)
 
 st.info(f"Based on your inputs, your predicted chance of admission is: **{predicted_chance:.2f}**")
-st.markdown(f"*(This means a {predicted_chance*100:.0f}% probability of admission)*")
+st.markdown(f"*(This means a {predicted_chance*100:.0f}% probability of admission to your desired college)*")
 
 st.markdown("---")
 
