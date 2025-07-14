@@ -24,15 +24,16 @@ st.markdown("""
     body {
         font-family: 'Inter', sans-serif;
         background-color: #f0f2f6;
-        color: #333;
+        color: #333 !important; /* Added !important for general text */
     }
     .stApp {
         background-color: #f0f2f6;
     }
 
     /* Header styling */
-    .st-emotion-cache-10qj07f { /* This targets the main title */
-        color: #333;
+    /* This targets the main title and other top-level Streamlit elements */
+    .st-emotion-cache-10qj07f {
+        color: #333 !important; /* Added !important for main title */
         text-align: center;
         font-size: 2.5em;
         font-weight: bold;
@@ -41,8 +42,9 @@ st.markdown("""
     }
 
     /* Subheader styling */
-    .st-emotion-cache-10qj07f + div > h2 { /* This targets subheaders */
-        color: #34495e;
+    /* This targets h2 elements specifically */
+    .st-emotion-cache-10qj07f + div > h2 {
+        color: #34495e !important; /* Added !important */
         border-bottom: 2px solid #3498db;
         padding-bottom: 10px;
         margin-bottom: 20px;
@@ -54,11 +56,12 @@ st.markdown("""
         border-right: 1px solid #bdc3c7;
         padding: 20px;
         border-radius: 10px;
+        color: #333 !important; /* Ensure sidebar text is dark */
     }
 
     /* Input widgets styling */
     .st-emotion-cache-1c7y2kd { /* Targets number input labels */
-        color: #2c3e50;
+        color: #2c3e50 !important; /* Added !important */
         font-weight: bold;
     }
     .st-emotion-cache-1c7y2kd > div > div > input { /* Targets number input fields */
@@ -66,6 +69,7 @@ st.markdown("""
         border: 1px solid #ccc;
         padding: 10px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        color: #333 !important; /* Ensure input text is dark */
     }
     .st-emotion-cache-1c7y2kd > div > div > input:focus {
         border-color: #3498db;
@@ -75,7 +79,7 @@ st.markdown("""
     /* Button styling */
     .st-emotion-cache-vk3305.e1g8pov61 { /* Targets the main button */
         background-color: #2ecc71;
-        color: white;
+        color: white; /* Button text should remain white for contrast */
         border-radius: 10px;
         padding: 12px 25px;
         font-size: 1.1em;
@@ -98,13 +102,13 @@ st.markdown("""
         border: 1px solid #e0e0e0;
     }
     .st-emotion-cache-13ln4gm > div > div > div > div:first-child { /* Metric label */
-        color: #7f8c8d;
+        color: #7f8c8d !important; /* Added !important */
         font-size: 0.9em;
         text-transform: uppercase;
         margin-bottom: 5px;
     }
     .st-emotion-cache-13ln4gm > div > div > div > div:last-child { /* Metric value */
-        color: #2c3e50;
+        color: #2c3e50 !important; /* Added !important */
         font-size: 1.8em;
         font-weight: bold;
     }
@@ -115,7 +119,7 @@ st.markdown("""
         border-radius: 8px;
         padding: 10px 20px;
         font-weight: bold;
-        color: #34495e;
+        color: #34495e !important; /* Added !important */
         border: 1px solid #bdc3c7;
     }
     .st-emotion-cache-p5m9p9 > div { /* Expander content */
@@ -140,11 +144,12 @@ st.markdown("""
         border-radius: 10px;
         padding: 15px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        color: #333 !important; /* Ensure info message text is dark */
     }
 
     /* General text */
     p {
-        color: #555;
+        color: #555 !important; /* Added !important */
         line-height: 1.6;
     }
 </style>
@@ -155,9 +160,10 @@ st.markdown("""
 def load_and_train_model():
     """Loads data, preprocesses it, and trains the Linear Regression model."""
     try:
+        # Changed to load from GitHub raw URL for better accessibility
         df = pd.read_csv("https://raw.githubusercontent.com/Sandeshb24/graduate-admission-chance/refs/heads/main/Admission_Predict_Ver1.1.csv")
-    except FileNotFoundError:
-        st.error("Dataset 'Admission_Predict_Ver1.1.csv' not found. Please ensure it's in the same directory.")
+    except Exception as e:
+        st.error(f"Error loading dataset: {e}. Please ensure the URL is correct or the file is in the same directory if loading locally.")
         st.stop()
 
     # Drop 'Serial No.' as it's not a feature
