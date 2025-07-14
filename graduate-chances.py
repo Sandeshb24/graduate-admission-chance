@@ -58,13 +58,29 @@ st.markdown("""
     }
 
     /* Sidebar styling */
-    .st-emotion-cache-1d392l3 { /* Targets the sidebar content */
-        background-color: #ecf0f1;
+    /* Target the main sidebar container */
+    [data-testid="stSidebar"] {
+        background-color: #ecf0f1 !important; /* Ensure sidebar background is light */
+        color: #333 !important; /* Ensure sidebar text is dark */
+    }
+    /* Target the sidebar content area */
+    [data-testid="stSidebarContent"] {
+        background-color: #ecf0f1 !important; /* Ensure sidebar content background is light */
         border-right: 1px solid #bdc3c7;
         padding: 20px;
         border-radius: 10px;
         color: #333 !important; /* Ensure sidebar text is dark */
     }
+    /* Specific styling for elements within the sidebar if needed */
+    [data-testid="stSidebarContent"] .st-emotion-cache-1c7y2kd,
+    [data-testid="stSidebarContent"] .st-emotion-cache-1c7y2kd > div > div > input,
+    [data-testid="stSidebarContent"] p,
+    [data-testid="stSidebarContent"] h1,
+    [data-testid="stSidebarContent"] h2,
+    [data-testid="stSidebarContent"] h3 {
+        color: #333 !important; /* Apply dark color to all text elements within sidebar */
+    }
+
 
     /* Input widgets styling */
     .st-emotion-cache-1c7y2kd { /* Targets number input labels */
