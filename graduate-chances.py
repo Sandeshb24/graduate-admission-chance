@@ -24,16 +24,23 @@ st.markdown("""
     body {
         font-family: 'Inter', sans-serif;
         background-color: #f0f2f6;
-        color: #333 !important; /* Added !important for general text */
+        color: #333 !important; /* Ensure general text is dark */
     }
     .stApp {
         background-color: #f0f2f6;
+        color: #333 !important; /* Ensure app container text is dark */
     }
 
-    /* Header styling */
+    /* Streamlit specific components for text */
+    /* Target h1, h2, h3, and p tags directly within the main app content */
+    .stApp h1, .stApp h2, .stApp h3, .stApp p, .stApp div {
+        color: #333 !important; /* Apply dark color to all main text elements */
+    }
+
+    /* Header styling (main title) */
     /* This targets the main title and other top-level Streamlit elements */
     .st-emotion-cache-10qj07f {
-        color: #333 !important; /* Added !important for main title */
+        color: #333 !important; /* Ensure main title is dark */
         text-align: center;
         font-size: 2.5em;
         font-weight: bold;
@@ -44,7 +51,7 @@ st.markdown("""
     /* Subheader styling */
     /* This targets h2 elements specifically */
     .st-emotion-cache-10qj07f + div > h2 {
-        color: #34495e !important; /* Added !important */
+        color: #34495e !important; /* Ensure subheaders are dark */
         border-bottom: 2px solid #3498db;
         padding-bottom: 10px;
         margin-bottom: 20px;
@@ -61,7 +68,7 @@ st.markdown("""
 
     /* Input widgets styling */
     .st-emotion-cache-1c7y2kd { /* Targets number input labels */
-        color: #2c3e50 !important; /* Added !important */
+        color: #2c3e50 !important; /* Ensure input labels are dark */
         font-weight: bold;
     }
     .st-emotion-cache-1c7y2kd > div > div > input { /* Targets number input fields */
@@ -102,13 +109,13 @@ st.markdown("""
         border: 1px solid #e0e0e0;
     }
     .st-emotion-cache-13ln4gm > div > div > div > div:first-child { /* Metric label */
-        color: #7f8c8d !important; /* Added !important */
+        color: #7f8c8d !important; /* Ensure metric labels are dark */
         font-size: 0.9em;
         text-transform: uppercase;
         margin-bottom: 5px;
     }
     .st-emotion-cache-13ln4gm > div > div > div > div:last-child { /* Metric value */
-        color: #2c3e50 !important; /* Added !important */
+        color: #2c3e50 !important; /* Ensure metric values are dark */
         font-size: 1.8em;
         font-weight: bold;
     }
@@ -119,7 +126,7 @@ st.markdown("""
         border-radius: 8px;
         padding: 10px 20px;
         font-weight: bold;
-        color: #34495e !important; /* Added !important */
+        color: #34495e !important; /* Ensure expander header is dark */
         border: 1px solid #bdc3c7;
     }
     .st-emotion-cache-p5m9p9 > div { /* Expander content */
@@ -149,7 +156,7 @@ st.markdown("""
 
     /* General text */
     p {
-        color: #555 !important; /* Added !important */
+        color: #555 !important; /* Ensure paragraph text is dark */
         line-height: 1.6;
     }
 </style>
